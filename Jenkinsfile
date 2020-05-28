@@ -22,7 +22,7 @@ node {
     // login Azure
     withCredentials([azureServicePrincipal('azsrvsp')]) {
       sh '''
-        az login --service-principal -u 3cb9f9a1-fdf8-4692-b7f3-08ab93802d5f -p -NxS5_aT5QUB3ln599T_veeXJlc-aubKWp -t 72f988bf-86f1-41af-91ab-2d7cd011db47
+        az login --service-principal -u 3cb9f9a1-fdf8-4692-b7f3-08ab93802d5f -p Pu4l_5cMYf2f0p_4PQ_7os..-dwJpb6WYS -t 72f988bf-86f1-41af-91ab-2d7cd011db47
         az account set -s 7b886822-bfaf-4ba7-9df9-0f5481616177
       '''
     }
