@@ -20,10 +20,10 @@ node {
     def resourceGroup = 'jenkins-rg' 
     def webAppName = 'JavaSampleJenkins'
     // login Azure
-    withCredentials([azureServicePrincipal('azsrvsp')]) {
+     withCredentials([azureServicePrincipal('azure_service_principal')]) {
       sh '''
-        az login --service-principal -u 3cb9f9a1-fdf8-4692-b7f3-08ab93802d5f -p Pu4l_5cMYf2f0p_4PQ_7os..-dwJpb6WYS -t 72f988bf-86f1-41af-91ab-2d7cd011db47
-        az account set -s 7b886822-bfaf-4ba7-9df9-0f5481616177
+        az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+        az account set -s $AZURE_SUBSCRIPTION_ID
       '''
     }
     // get publish settings
